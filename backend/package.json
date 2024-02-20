@@ -1,0 +1,27 @@
+{
+  "name": "todo-backend",
+  "version": "1.0.0",
+  "description": "Simple full stack ToDo app that lets anyone add/view and mark any ToDo as done.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryansindhi18/todo-fullstack.git"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "Aryan Sindhi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aryansindhi18/todo-fullstack/issues"
+  },
+  "homepage": "https://github.com/aryansindhi18/todo-fullstack#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.1.3",
+    "zod": "^3.22.4"
+  }
+}
