@@ -18,6 +18,7 @@ export function ToDos({todos,fetchData}){
                         {/* <div><h3>{todo.description}</h3></div> */}
                         <div class="item-title">{todo.title}</div><div>{todo.description}</div>
                         <button className={todo.isDone==true?"done":""} type="button" onClick={async ()=>{
+
                             await fetch(`${baseUrl}complete-todo/${todo._id}`,{
                                 method: "PUT",
                                 headers: {
