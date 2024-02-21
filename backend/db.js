@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-
-mongoose.connect('mongodb+srv://aryansindhi18:wsxokN0657%40@aryansindhi18.orx7din.mongodb.net/todoapp');
+const {mongoString} = require("./config.js")
+mongoose.connect(mongoString);
 
 const toDoSchema = new mongoose.Schema({
     title: String, // String is shorthand for {type: String}

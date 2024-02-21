@@ -2,8 +2,9 @@ const express = require("express");
 const app = express();
 const {createToDoSchema,updateToDoSchema} = require("./types.js");
 const { toDo } = require("./db.js");
+const cors = require("cors");
 
-
+app.use(cors());
 app.use(express.json());
 
 
