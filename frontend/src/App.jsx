@@ -38,7 +38,7 @@ function App() {
 
   
   async function fetchData(){
-    let res = await fetch("http://localhost:3000/todos");
+    let res = await fetch("https://todo-fullstack-server.vercel.app/todos");
     let data = await res.json();
     // console.log(`hello ji data dekhya jaye: ${data.data}`)
     setToDos(data.data);
