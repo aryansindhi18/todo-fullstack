@@ -8,7 +8,7 @@ export function ToDos({todos,fetchData}){
                         {/* <div><h3>{todo.description}</h3></div> */}
                         <div class="item-title">{todo.title}</div><div>{todo.description}</div>
                         <button className={todo.isDone==true?"done":""} type="button" onClick={async ()=>{
-                            await fetch(`https://todo-fullstack-server.vercel.app/${todo._id}`,{
+                            await fetch(`https://todo-fullstack-server.vercel.app/complete-todo/${todo._id}`,{
                                 method: "PUT",
                                 headers: {
                                     "Content-Type": "application/json",
