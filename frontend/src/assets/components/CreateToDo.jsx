@@ -21,7 +21,7 @@ export function CreateToDo(props){
                 setDescription(description);
 
 
-                await fetch("http://localhost:3000/add-todo",{
+                await fetch("https://todo-fullstack-server.vercel.app/add-todo",{
                     method: "POST",
                     headers: {
                       "Content-Type": "application/json",
