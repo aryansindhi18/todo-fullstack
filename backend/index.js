@@ -54,5 +54,10 @@ app.put("/complete-todo/:todoid",async (req,res)=>{
 
     return res.status(200).json({msg:"todo marked as done..."})
 })
+app.delete("/delete/:id",async (req,res)=>{
+    const id = req.params.id;
+    await toDo.deleteOne({_id:id})
+    res.status(200).json({msg:"data deleted successfully!"})
+})
 
 app.listen(3000);

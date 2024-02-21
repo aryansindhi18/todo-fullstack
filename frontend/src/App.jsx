@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { CreateToDo } from './assets/components/CreateToDo'
 import { ToDos } from './assets/components/ToDos'
+// const {baseUrl} = require("./BaseUrl.js")
+import baseUrl from "./BaseUrl.js"
 
 // function App() {
 //   const [count, setCount] = useState(0)
@@ -38,7 +40,7 @@ function App() {
 
   
   async function fetchData(){
-    let res = await fetch("http://localhost:3000/todos");
+    let res = await fetch(`${baseUrl}todos`);
     let data = await res.json();
     // console.log(`hello ji data dekhya jaye: ${data.data}`)
     setToDos(data.data);

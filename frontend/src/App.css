@@ -236,7 +236,55 @@ button:focus-visible {
       transition: 0.7s ease-in-out transform, 0.7s ease-in-out;
   }
 
+  .delete:hover {
+    /* padding-top: 10px; */
+    color: red;
+    cursor: pointer;
+  }
 
+  
+  .alert {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #469600;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    animation: fadeOut 5s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.alert-delete {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #9a0000;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
 
 
 
