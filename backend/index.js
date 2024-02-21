@@ -7,7 +7,9 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-
+app.get("/",(req,res)=>{
+    return res.jso("Hello");
+})
 app.get("/todos",async (req,res)=>{
     //fetch data from mongodb
 
