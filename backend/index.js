@@ -56,6 +56,7 @@ app.put("/complete-todo/:todoid",async (req,res)=>{
     
     // Toggle the value of isDone
     todo.isDone = !todo.isDone;
+    todo.CreatedOn = Date.now();
     
     // Save the updated todo
     await todo.save();
