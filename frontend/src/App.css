@@ -243,6 +243,11 @@ button:focus-visible {
     vertical-align: middle;
   }
 
+  .undo{
+    font-size: 1.75em;
+    vertical-align: middle;
+  }
+
   .icons{
     font-size: 2em;
     vertical-align: middle;
@@ -261,7 +266,7 @@ button:focus-visible {
     cursor: pointer;
   }
 
-  .edit:hover{
+  .edit:hover,.undo:hover{
     color: grey;
     cursor: pointer;
   }
