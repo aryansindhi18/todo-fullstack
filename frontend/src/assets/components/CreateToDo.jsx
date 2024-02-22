@@ -32,7 +32,7 @@ export function CreateToDo(props){
                     // alert("Title cannot be empty...")
                     return;
                 }
-                await fetch(`${baseUrl}add-todo`,{
+                await fetch(`${import.meta.env.VITE_REACT_APP_BASEURL}add-todo`,{
                     method: "POST",
                     headers: {
                       "Content-Type": "application/json",

@@ -3,3 +3,4 @@ backend/config.js
 frontend/README.md
 frontend/src/BaseUrl.js
 backend/.env
+frontend/.env

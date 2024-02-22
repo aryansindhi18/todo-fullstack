@@ -35,7 +35,7 @@ export function ToDos({todos,fetchData}){
         };
 
         // Make API call to update todo item with edited values
-        await fetch(`${baseUrl}update-todo/${editTodo._id}`, {
+        await fetch(`${import.meta.env.VITE_REACT_APP_BASEURL}update-todo/${editTodo._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -78,7 +78,7 @@ export function ToDos({todos,fetchData}){
                         <div>{todo.description}</div>
                         {/* -------------------------------------------------------------------------- */}
                         <button className={todo.isDone==true?"done":""} type="button" onClick={async ()=>{
-                            await fetch(`${baseUrl}complete-todo/${todo._id}`,{
+                            await fetch(`${import.meta.env.VITE_REACT_APP_BASEURL}complete-todo/${todo._id}`,{
                                 method: "PUT",
                                 headers: {
                                     "Content-Type": "application/json",
@@ -92,7 +92,7 @@ export function ToDos({todos,fetchData}){
                         {!todo.isDone && <BiSolidCommentEdit title="Edit ToDo" className="edit" onClick={() => handleEdit(todo)}/>}
                         {/* -------------------------------------------------------------------------- */}
                         {todo.isDone && <CgUndo title="Undo Completed..." className="undo" onClick={async ()=>{
-                            await fetch(`${baseUrl}complete-todo/${todo._id}`,{
+                            await fetch(`${import.meta.env.VITE_REACT_APP_BASEURL}complete-todo/${todo._id}`,{
                                 method: "PUT",
                                 headers: {
                                     "Content-Type": "application/json",
@@ -102,7 +102,7 @@ export function ToDos({todos,fetchData}){
                         }}/>}
                         {/* -------------------------------------------------------------------------- */}
                         <RiChatDeleteFill title="Delete ToDo" className="delete" onClick={async()=>{
-                            await fetch(`${baseUrl}delete/${todo._id}`,{
+                            await fetch(`${import.meta.env.VITE_REACT_APP_BASEURL}delete/${todo._id}`,{
                                 method:"DELETE",
                                 headers: {
                                     "Content-Type": "application/json",
