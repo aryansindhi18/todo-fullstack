@@ -8,10 +8,10 @@ export const Footer = () => {
       <div style={socialLinksStyle}>
         {/* Add your social links here */}
         <span style={signatureStyle}>~Aryan Sindhi, Let us connect: </span>
-        <a href="https://github.com/aryansindhi18" target="_blank" rel="noopener noreferrer"><FaSquareGithub className="icons" /></a>
-        <a href="https://twitter.com/AryanSindhi" target="_blank" rel="noopener noreferrer"><FaSquareXTwitter className="icons" /></a>
-        <a href="https://instagram.com/aryansindhi18" target="_blank" rel="noopener noreferrer"><FaSquareInstagram className="icons" /></a>
-        <a href="https://www.linkedin.com/in/aryan-sindhi/" target="_blank" rel="noopener noreferrer"><FaLinkedin className="icons" /></a>
+        <a title="Github" href="https://github.com/aryansindhi18" target="_blank" rel="noopener noreferrer"><FaSquareGithub className="icons" /></a>
+        <a title="Twitter" href="https://twitter.com/AryanSindhi" target="_blank" rel="noopener noreferrer"><FaSquareXTwitter className="icons" /></a>
+        <a title="Instagram" href="https://instagram.com/aryansindhi18" target="_blank" rel="noopener noreferrer"><FaSquareInstagram className="icons" /></a>
+        <a title="LinkedIn" href="https://www.linkedin.com/in/aryan-sindhi/" target="_blank" rel="noopener noreferrer"><FaLinkedin className="icons" /></a>
         
       </div>
     </footer>

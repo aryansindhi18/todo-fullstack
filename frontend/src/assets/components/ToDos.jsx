@@ -89,9 +89,9 @@ export function ToDos({todos,fetchData}){
                             {todo.isDone==true ? "Completed!":"Done..."}
                         </button>
                         {/* -------------------------------------------------------------------------- */}
-                        {!todo.isDone && <BiSolidCommentEdit className="edit" onClick={() => handleEdit(todo)}/>}
+                        {!todo.isDone && <BiSolidCommentEdit title="Edit ToDo" className="edit" onClick={() => handleEdit(todo)}/>}
                         {/* -------------------------------------------------------------------------- */}
-                        {todo.isDone && <CgUndo className="undo" onClick={async ()=>{
+                        {todo.isDone && <CgUndo title="Undo Completed..." className="undo" onClick={async ()=>{
                             await fetch(`${baseUrl}complete-todo/${todo._id}`,{
                                 method: "PUT",
                                 headers: {
@@ -101,7 +101,7 @@ export function ToDos({todos,fetchData}){
                             fetchData();
                         }}/>}
                         {/* -------------------------------------------------------------------------- */}
-                        <RiChatDeleteFill className="delete" onClick={async()=>{
+                        <RiChatDeleteFill title="Delete ToDo" className="delete" onClick={async()=>{
                             await fetch(`${baseUrl}delete/${todo._id}`,{
                                 method:"DELETE",
                                 headers: {
