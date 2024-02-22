@@ -55,7 +55,7 @@ function App() {
         <br />
         <CreateToDo fetchData={fetchData} setToDos={setToDos}></CreateToDo>
         <ToDos todos={todos} fetchData={fetchData} ></ToDos>
-        <Footer></Footer>
+{/*         <Footer></Footer> */}
       </div>
     </>
   )
