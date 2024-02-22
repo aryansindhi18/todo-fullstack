@@ -14,6 +14,7 @@ export function CreateToDo(props){
 
     return(
         <div className="input">
+            <div>
             <input type="text" id="title" placeholder="title" value={title} onChange={(e)=>{
                 setTitle(e.target.value);
             }}/>
@@ -48,6 +49,7 @@ export function CreateToDo(props){
             {/* console.log(`${message}`) */}
             {/* {message.msg && <div className={`alert-${message.type}`}>{message.msg}</div>}  */}
             {message.msg && <div className={`alert-${message.type}`}>{message.msg}</div>}
+            </div>
         </div>
     )
 }

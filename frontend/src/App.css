@@ -122,6 +122,11 @@ input{
   border-radius: 5px;
   color: rgba(black, 0.7);
 }
+.input{
+  display: flex;
+  justify-content: center;
+  /* gap: 0.5em; */
+}
 
 .list-wrapper {
 	/* position: relative; */
@@ -163,6 +168,7 @@ input{
 	text-transform: uppercase;
 	text-align: center;
 	color: #CD4B4B;
+  margin: 0%;
 }
 
 .item-title {

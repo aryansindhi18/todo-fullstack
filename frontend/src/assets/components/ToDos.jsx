@@ -57,12 +57,12 @@ export function ToDos({todos,fetchData}){
                         <div>
                         { editTodo===todo ? (
                             <>
-                            <input
+                            <input style={{ overflowX: "auto" }}
                                 type="text"
                                 value={editedTitle}
                                 onChange={(e) => setEditedTitle(e.target.value)}
                             />
-                            <input
+                            <input style={{ overflowX: "auto" }}
                                 type="text"
                                 value={editedDescription}
                                 onChange={(e) => setEditedDescription(e.target.value)}
