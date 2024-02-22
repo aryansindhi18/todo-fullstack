@@ -37,7 +37,7 @@ const signatureStyle = {
 const socialLinksStyle = {
   display: 'flex',
   alignItems: 'center', // Align items vertically
-  gap: '1rem',
+  gap: '1.15rem',
 };
 
 
