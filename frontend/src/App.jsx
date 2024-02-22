@@ -6,7 +6,7 @@ import { CreateToDo } from './assets/components/CreateToDo'
 import { ToDos } from './assets/components/ToDos'
 // const {baseUrl} = require("./BaseUrl.js")
 import baseUrl from "./BaseUrl.js"
-
+import { Footer } from './assets/components/Footer.jsx'
 // function App() {
 //   const [count, setCount] = useState(0)
 
@@ -55,6 +55,7 @@ function App() {
         <br />
         <CreateToDo fetchData={fetchData} setToDos={setToDos}></CreateToDo>
         <ToDos todos={todos} fetchData={fetchData} ></ToDos>
+        <Footer></Footer>
       </div>
     </>
   )
