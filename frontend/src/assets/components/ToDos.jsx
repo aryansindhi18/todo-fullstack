@@ -2,6 +2,8 @@ import baseUrl from "../../BaseUrl.js"
 import { useState } from "react"
 import { RiChatDeleteFill } from "react-icons/ri";
 import { BiSolidCommentEdit } from "react-icons/bi";
+import { CgUndo } from "react-icons/cg";
+
 
 export function ToDos({todos,fetchData}){
     const [message, setMessage] = useState("");
@@ -88,6 +90,16 @@ export function ToDos({todos,fetchData}){
                         </button>
                         {/* -------------------------------------------------------------------------- */}
                         {!todo.isDone && <BiSolidCommentEdit className="edit" onClick={() => handleEdit(todo)}/>}
+                        {/* -------------------------------------------------------------------------- */}
+                        {todo.isDone && <CgUndo className="undo" onClick={async ()=>{
+                            await fetch(`${baseUrl}complete-todo/${todo._id}`,{
+                                method: "PUT",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                  }
+                            })
+                            fetchData();
+                        }}/>}
                         {/* -------------------------------------------------------------------------- */}
                         <RiChatDeleteFill className="delete" onClick={async()=>{
                             await fetch(`${baseUrl}delete/${todo._id}`,{

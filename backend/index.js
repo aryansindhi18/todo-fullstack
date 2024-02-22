@@ -45,12 +45,28 @@ app.put("/complete-todo/:todoid",async (req,res)=>{
         return res.status(411).json({ms: "wrong inputs..."})
     }
     //update in mongodb
-    await toDo.updateOne({
+
+
+    const todo = await toDo.findById(req.params.todoid);
+    if (!todo) {
+      // Handle the case where todo is not found
+      console.log('Todo not found');
+      return res.status(401).json({msg:'wrong inputs...'});
+    }
+    
+    // Toggle the value of isDone
+    todo.isDone = !todo.isDone;
+    
+    // Save the updated todo
+    await todo.save();
+
+
+    /*await toDo.updateOne({
         _id: req.params.todoid
     },{
         isDone: true,
         CreatedOn: Date.now()
-    })
+    })*/
 
 
     return res.status(200).json({msg:"todo marked as done..."})
