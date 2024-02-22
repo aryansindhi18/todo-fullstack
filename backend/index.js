@@ -11,7 +11,7 @@ app.use(express.json());
 app.get("/todos",async (req,res)=>{
     //fetch data from mongodb
 
-    const todos = await toDo.find({});
+    const todos = await toDo.find({}).sort({ CreatedOn: -1 });
 
     return res.status(200).json({msg:"Ok Report",data: todos});
 })
@@ -48,12 +48,43 @@ app.put("/complete-todo/:todoid",async (req,res)=>{
     await toDo.updateOne({
         _id: req.params.todoid
     },{
-        isDone: true
+        isDone: true,
+        CreatedOn: Date.now()
     })
 
 
     return res.status(200).json({msg:"todo marked as done..."})
 })
+
+
+app.put("/update-todo/:todoid",async (req,res)=>{
+    //update in mongodb
+    const updatePayLoad = {title: req.body.title,
+        description: req.body.description};
+        // console.log(`line 21 ${createPayLoad}`)
+        const parsedPayLoad = createToDoSchema.safeParse(updatePayLoad)
+        if(!parsedPayLoad.success){
+            return res.status(411).json({msg: "wrong inputs..."})
+        }
+
+        try{
+            const result = await toDo.updateOne({
+                _id: req.params.todoid
+            },{
+                title: req.body.title,
+                description:req.body.description,
+                CreatedOn: Date.now()
+            })
+            return res.status(200).json({msg:"data updated succesfully...",
+            data: {...updatePayLoad,id: result._id}});
+            }
+            catch(err){
+                console.log(err)
+                return res.status(500).json({msg:"Error in saving data, please try again..."})
+            }
+
+})
+
 app.delete("/delete/:id",async (req,res)=>{
     const id = req.params.id;
     await toDo.deleteOne({_id:id})
