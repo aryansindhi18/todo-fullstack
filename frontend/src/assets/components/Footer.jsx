@@ -84,5 +84,5 @@ const iconContainer = {
   display: 'flex',
   gap: '1em',
   overflowX: 'auto',
-  padding:'1em'
+  // padding:'1em'
 };
