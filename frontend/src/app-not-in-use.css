@@ -1,15 +1,109 @@
+/*#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+div{
+  border: 1px solid #646cffaa;
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
 
 
-/* body, html { height: 100%; } */
+
+/*NEW STYLE BY GPT*/
+/* .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-item {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  align-items: center;
+}
+
+
+
+.todo-item button {
+ 
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo-item button:hover {
+  background-color: #ff4735;
+} 
+*/
+/* $header-font: "Nunito";
+$main-font: "Open Sans"; */
+
+ /* * { box-sizing: border-box; } */
+
+body, html { height: 100%; }
 
 body {
-	/* display: flex; */
-	/* justify-content: center; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: skyblue;
   margin: 0%;
-}
   /* overflow-y: auto; */
-
+}
 
 .container {
   max-height: calc(100vh - 40px); 
@@ -17,7 +111,7 @@ body {
   
   /* max-width: auto;  */
   overflow-y: auto;
-  /* overflow-x: auto; */
+  overflow-x: auto;
   padding-bottom: 2.5em;
   
 } 
@@ -36,12 +130,13 @@ input{
 .input{
   display: flex;
   justify-content: center;
+  /* gap: 0.5em; */
 }
 
 .list-wrapper {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* padding: 0 10px;  */
+  display: flex;
+  justify-content: center;
+  padding: 0 10px; /* Add padding to the left and right sides */
 	/* position: relative; */
 	/* min-width: 45%; */
 	/* padding-top: 10px;  */
@@ -50,7 +145,7 @@ input{
   /* padding-right: 5em; */
   border-radius: 5px;
   overflow-x: auto;
-  box-shadow: 6px 6px 2px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 6px 6px 2px rgba(0, 0, 0, 0.1); */
   color: rgba(black, 0.7);
 
   background-image: repeating-linear-gradient(
@@ -60,10 +155,6 @@ input{
     #fff 1px,
     #fff 30px
   );
-  @media screen and (min-width: 768px) {
-    display: flex;
-    justify-content: center;
-  }
 
 	/* &:before {
 		position: absolute;
@@ -245,3 +336,127 @@ div{
   padding-left: 2px;
   padding-right: 0.5em;
 }
+
+
+
+/* html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+}
+
+body{
+  background: #4d244e;
+  font-family: sans-serif;
+  border-top: 5px solid #aa8e8d;
+}
+
+h1{
+  color: #aa8e8d;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.tasks{
+  width: 300px;
+  height: 405px;
+  position: absolute;
+  top: 20%;
+  left: 0px; 
+  right: 0px;
+  margin: 0px auto;
+} */
+
+/* input[type=checkbox] {
+  display: none;
+} */
+
+/* .label{
+  background: #ae5f75;
+  height: 69px;
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #2C3E50;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-indent: 20px;
+  cursor: pointer;
+  transition: all 0.7s ease;
+  position: relative;
+  padding: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+
+.label-done{
+  background: #ae5f75;
+  height: 69px;
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #2C3E50;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-indent: 20px;
+  cursor: pointer;
+  transition: all 0.7s ease;
+  position: relative;
+  padding: 5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.label h2 span{
+  display: block;
+  font-size: 12px;
+  text-transform: capitalize;
+  font-weight: normal;
+  color: #fff;
+}
+
+.label:before{
+  content:"";
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  right: 20px;
+  top: 30%;
+  transition: border 0.7s ease
+}
+
+.label-done:before{
+  content:"";
+  width: 20px;
+  height: 20px;
+  background: url("https://i.imgur.com/eoPQ05r.png") no-repeat center center;;
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  right: 20px;
+  top: 30%;
+  transition: border 0.7s ease
+}
+ */
+
+
+ 
+/* 
+ html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+} */

@@ -51,6 +51,7 @@ export function ToDos({todos,fetchData}){
 
     return(
         <div className="list-wrapper" > 
+            <div>
             {todos.map((todo)=>{
                 return(
                     <div key={todo._id} className="item">
@@ -74,8 +75,8 @@ export function ToDos({todos,fetchData}){
                         </>
                         ) : (
                         <>
-                        <div className="item-title">{todo.title}</div>
-                        <div>{todo.description}</div>
+                        <div className="item-title" style={{ overflowX: "auto" ,whiteSpace: "pre-wrap"}}>{todo.title}</div>
+                        <div style={{ overflowX: "auto",whiteSpace: "pre-wrap" }}>{todo.description }</div>
                         {/* -------------------------------------------------------------------------- */}
                         <button className={todo.isDone==true?"done":""} type="button" onClick={async ()=>{
                             await fetch(`${import.meta.env.VITE_REACT_APP_BASEURL}complete-todo/${todo._id}`,{
@@ -118,6 +119,7 @@ export function ToDos({todos,fetchData}){
                     </div>
                 )
             })}
+            </div>
         </div>
     )    
 }
