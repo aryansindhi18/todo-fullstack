@@ -3,11 +3,13 @@ const app = express();
 const {createToDoSchema,updateToDoSchema} = require("./types.js");
 const { toDo } = require("./db.js");
 const cors = require("cors");
+const { swaggerServe, swaggerSetup } = require('./config')  
+
 
 app.use(cors());
 app.use(express.json());
 
-
+app.use("/api-docs", swaggerServe, swaggerSetup); 
 app.get("/todos",async (req,res)=>{
     //fetch data from mongodb
 
@@ -51,7 +53,7 @@ app.put("/complete-todo/:todoid",async (req,res)=>{
     if (!todo) {
       // Handle the case where todo is not found
       console.log('Todo not found');
-      return res.status(401).json({msg:'wrong inputs...'});
+      return res.status(411).json({msg:'wrong inputs...'});
     }
     
     // Toggle the value of isDone

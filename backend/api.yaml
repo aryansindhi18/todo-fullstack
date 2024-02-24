@@ -1,0 +1,101 @@
+openapi: 3.0.0
+info:
+  title: ToDO Apis ~AryanSindhi
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 0.1.9
+servers:
+  - url: https://todo-fullstack-server.vercel.app/
+
+paths:
+  /todos:
+    get:
+      tags: 
+        - Get ToDos
+      summary: Returns list of todos
+      responses: 
+        '200':
+          description: Ok Report
+
+  /add-todo:
+    post:
+      tags:
+        - Add a To Do
+      requestBody:
+        required: true
+        content:
+           application/json:
+            schema:
+              type: object
+              properties: 
+                title:         
+                  type: string
+                  example: "Sample Title"
+                description:       
+                  type: string
+                  example: "Sample description" 
+      responses: 
+        '411':
+          description: Wrong Inputs
+        '200':
+          description: OK
+        '500':
+          description: Error is saving data
+
+  /complete-todo/{todoid}:
+    put:
+      tags:
+        - Complete a To Do
+      parameters:
+        - in: path
+          name: todoid
+          schema:
+            type: string
+            example: "65d64733ce1f2d50e61b893a"   
+      responses: 
+        '411':
+          description: Wrong Inputs
+        '200':
+          description: OK
+  /update-todo/{todoid}:
+    put:
+      tags:
+        - Update a To Do
+      parameters:
+        - in: path
+          name: todoid
+          schema:
+            type: string
+            example: "65d9945a1939cb489d335d3e"    
+      requestBody:
+        required: true
+        content:
+           application/json:
+            schema:
+              type: object
+              properties: 
+                title:         
+                  type: string
+                  example: "Sample Title"
+                description:       
+                  type: string
+                  example: "Sample description"  
+      responses: 
+        '500':
+          description: Error in saving data...
+        '200':
+          description: OK
+        '411':
+          description: Wrong Inputs
+  /delete/{id}:
+    delete:
+      tags:
+        - Delete a To Do
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+            example: "65d9945a1939cb489d335d3e"   
+      responses: 
+        '200':
+          description: OK
