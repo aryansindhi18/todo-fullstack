@@ -3,7 +3,7 @@ const app = express();
 const {createToDoSchema,updateToDoSchema} = require("./types.js");
 const { toDo } = require("./db.js");
 const cors = require("cors");
-const { swaggerServe, swaggerSetup } = require('./config')  
+const { swaggerServe, swaggerSetup } = require('./config.js')  
 
 
 app.use(cors());
