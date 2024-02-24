@@ -9,3 +9,5 @@ Technologies used:
 - Backend: NodeJs(ExpressJs)
 - Database: MongoDb
 - FrontEnd: ReactJs
+
+Swagger UI: https://todo-fullstack-server.vercel.app/api-docss

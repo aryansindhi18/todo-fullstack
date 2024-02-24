@@ -1,5 +1,5 @@
 backend/node_modules/
-backend/config.js
+# backend/config.js
 frontend/README.md
 frontend/src/BaseUrl.js
 backend/.env
