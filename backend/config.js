@@ -4,7 +4,7 @@ const YAML = require("yamljs");
 const swaggerJSDocs = YAML.load(path.join(__dirname, 'api.yaml'));
 
 const options = {
-    // customCss: ` img {content:url(\'../logo.svg\'); height:auto;} `,
+    customCss: `https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css`,
     // customfavIcon: "../favicon.ico",
     customSiteTitle: "API docs - ToDo ~AryanSindhi"
 }; 
