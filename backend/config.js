@@ -4,6 +4,8 @@ const YAML = require("yamljs");
 const swaggerJSDocs = YAML.load(path.join(__dirname, 'api.yaml'));
 
 const options = {
+    customCss:
+      '.swagger-ui .opblock .opblock-summary-path-description-wrapper { align-items: center; display: flex; flex-wrap: wrap; gap: 0 10px; padding: 0 10px; width: 100%; }',
     customCssUrl:
       'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css',
     customJs: [
