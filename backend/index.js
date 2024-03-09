@@ -13,7 +13,7 @@ app.use("/api-docs", swaggerServe, swaggerSetup);
 app.get("/todos",async (req,res)=>{
     //fetch data from mongodb
 
-    const todos = await toDo.find({}).sort({ UpdatedOn: -1,CreatedOn: -1 });
+    const todos = await toDo.find({}).sort({ CreatedOn: -1 });
 
     return res.status(200).json({msg:"Ok Report",data: todos});
 })
