@@ -10,7 +10,11 @@ const toDoSchema = new mongoose.Schema({
     CreatedOn: {
       type: Date,
       default: Date.now // This will set the default value to the current date
-  }
+  },
+    UpdatedOn: {
+    type: Date,
+    default: Date.now // This will set the default value to the current date
+}
   });
 
   const toDo = mongoose.model('toDos', toDoSchema);

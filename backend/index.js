@@ -13,7 +13,7 @@ app.use("/api-docs", swaggerServe, swaggerSetup);
 app.get("/todos",async (req,res)=>{
     //fetch data from mongodb
 
-    const todos = await toDo.find({}).sort({ CreatedOn: -1 });
+    const todos = await toDo.find({}).sort({ UpdatedOn: -1,CreatedOn: -1 });
 
     return res.status(200).json({msg:"Ok Report",data: todos});
 })
@@ -58,7 +58,7 @@ app.put("/complete-todo/:todoid",async (req,res)=>{
     
     // Toggle the value of isDone
     todo.isDone = !todo.isDone;
-    todo.CreatedOn = Date.now();
+    todo.UpdatedOn = Date.now();
     
     // Save the updated todo
     await todo.save();
@@ -92,7 +92,7 @@ app.put("/update-todo/:todoid",async (req,res)=>{
             },{
                 title: req.body.title,
                 description:req.body.description,
-                CreatedOn: Date.now()
+                UpdatedOn: Date.now()
             })
             return res.status(200).json({msg:"data updated succesfully...",
             data: {...updatePayLoad,id: result._id}});
