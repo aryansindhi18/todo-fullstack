@@ -87,7 +87,7 @@ export function ToDos({todos,fetchData}){
                             })
                             fetchData();
                         }}>
-                            {todo.isDone==true ? "Completed!":"Done..."}
+                            {todo.isDone==true ? "Completed!":"Mark as done...?"}
                         </button>
                         {/* -------------------------------------------------------------------------- */}
                         {!todo.isDone && <BiSolidCommentEdit title="Edit ToDo" className="edit" onClick={() => handleEdit(todo)}/>}
